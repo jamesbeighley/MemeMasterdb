@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<title> View Memes</title>
+	<link rel="icon" href="./assets/pepe.png">
+    <script src="https://cdn.zinggrid.com/zinggrid.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+	<style>
+	   .button {
+		  text-align: center;
+		  background: #07C;
+		  color: #FFF;
+		  cursor: pointer;
+		  border-radius: 3px;
+		  font-size: 0.85rem;
+		  padding: 5px 20px;
+		  cursor: pointer;
+		  margin: 15px 0 15px 15px;
+		  position: relative;
+		  top: 0;
+		}
+	
+		.button:hover {
+			background: #1b6ead;
+		}
+		button {
+			width:33%;
+			background-color: white;
+		}
+		</style>
+	</head>
+	<body>
+		<br><br><br><br>
+		<noscript style="text-align: center">
+		  <br><br>
+		  <h1>An Error Occurred when trying to load Javascript</h1>
+		  </noscript>
+    	<zing-grid id="grid" search sorter class="site-grid" layout-controls=false layout="card">
+		    <zg-caption style="position: fixed; top:0; width:100%; left:0;">
+		    <a href="profile.html">
+		    	<img src="./assets/defaultProfile.png" style="width:30px; border: white 2px solid; border-radius: 30px;"id="profileBtn"></img>
+		    	</a>
+				<span style="margin-left:2em">MemeMasterdb</span>
+				<span class="button" style="margin-left:2em" id="addBtn"><a href="./addmeme.html" style="color:white; text-decoration: none">Add a Meme</a></span>
+			</zg-caption>
+	    	<zg-colgroup>
+	    		<zg-column index="img" style = " object-fit: cover; width: 300px; height: 300px;"header=" " type="image" cell-class="profile-avatar" width="30%"></zg-column>
+				<zg-column index="title" header="Title" cell-class="character-info" renderer-template="characterCard" editor-template="characterEditor">
+					<span>[[index.title]]</span>
+				</zg-column>
+				<zg-column index="tags" width="stretch"><span>[[index.tags]]</span></zg-column>
+				<zg-column index="key" header=" " width="30%">
+					<button class="edit" value=[[index.key]]>Edit Meme</button>
+					<button class="delete" value=[[index.key]]>Delete Meme</button>
+					<zg-column index="img" header=" " width="30%"><button class="share"  value="[[index.img]]">Share Meme</button></zg-column>
+				</zg-column>
+				
+					
+				
+				
+			</zg-colgroup>
+	    </zing-grid>
+		<script src="viewmemes.js"></script>
+	</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>MemeMaster Login</title>
+    <link rel="icon" href="./assets/pepe.png">
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    <style>
+	    body{font-size:x-large; text-align:center; background-color: white;}
+	    h1, h3, .form {text-align: center; }
+	    h1 {
+		    background-color:  #0f7296; 
+			color: white;
+			border-radius: 15px;
+			width: 40%;
+			margin: auto;
+			margin-top: 2%;
+			padding: 2%;
+			border: 1px solid black; 
+	    }
+		.form {
+			background-color:  #0f7296; 
+			color: white;
+			border-radius: 15px;
+			padding: 20px;
+			position: absolute;
+			width: 40%;
+			height: 40%;
+			top: 30%;
+			border: 1px solid black; 
+			}
+		#logindiv {
+			left: 2.5%;
+		}
+		#signupdiv {
+			right: 2.5%;
+		}
+	</style>
+</head>
+<body onload = "checkIfSignedIn()">
+	<h1 style="font-size: xx-large; color:white;">Welcome to MemeMaster</h1>
+    <div class="form" id="logindiv">
+	    <h2>Login</h2>
+	    <div class="login">
+	        <label for="email">Email:</label>
+	        <input type="text" id="email"required autofocus>
+	        <br>
+	        <label for="password">Password:</label>
+	        <input type="password" id="password" required>
+	        <br>
+	        <button onclick="signIn()">Submit</button>
+	        <br>
+	    </div>
+    </div>
+    <br>
+    <div class="form" id="signupdiv">
+    	<h2>Register</h2>
+	    <div class ="register">
+		    <label for="registeremail">Email:</label>
+	        <input type="text" id="registeremail" required autofocus>   
+	        <br>
+	        <label for="registerpassword">Password:</label>
+	        <input type="password" id="registerpassword" required>
+			<br>
+	        <label for="registerpassword2">Re-type password:</label>
+	        <input type="password" id="registerpassword2" required>
+	        <button onclick="register()">Submit</button>
+	    </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+
+</html>

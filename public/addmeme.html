@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	  <link rel="icon" href="./assets/pepe.png">
+	  <title>Add Meme</title>
+    <script src="https://cdn.zinggrid.com/zinggrid.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+	   .button {
+		  text-align: center;
+		  background: #07C;
+		  color: #FFF;
+		  cursor: pointer;
+		  border-radius: 3px;
+		  font-size: 0.85rem;
+		  padding: 5px 20px;
+		  cursor: pointer;
+		  margin: 15px 0 15px 15px;
+		  position: relative;
+		  top: 0;
+		}
+
+		.button:hover {
+			background: #1b6ead;
+		}
+
+	</style>
+  </head>
+  <body>
+		<br><br><br><br>
+		<noscript style="text-align: center">
+	  <br><br>
+	  <h1>An Error Occurred when trying to load Javascript</h1>
+	  </noscript>
+		<div style="text-align: center">
+			<h3>Add Meme by URL:</h3>
+			<form action="composememe.html" method='get'>
+				<label for="uploadURL"><b>URL: </b></label>
+				<input type="text" id="uploadURL" name="url" style="width:60%;">
+				<input type="submit">
+			</form>
+			<br>
+			<br>
+		</div>
+		<div style="text-align: center;">
+			<hr />
+			<h3>Upload Meme from Computer:</h3>
+			<div>
+				<input type="file" id="uploadFile" name="url" accept="image/png, image/jpeg"><br><br>
+				<button type="submit" id="submitURL">Submit</button>
+			</div>
+			<br>
+		</div>
+		<div style="text-align: center;">
+			<hr />
+				<zing-grid  id='template' search layout-controls=false layout="card">
+					<zg-caption style="position:relative; z-index:1100;">
+						<span>Choose Meme:</span>
+					</zg-caption>
+					<zg-colgroup>
+						<zg-column index='name' header=' ' align='center'><b>[[index.name]]</b></zg-column>
+						<zg-column index='url' header=" "type="image" height="10" width="80"></button></zg-column>
+						<zg-column index='url' header=" "type="image" height="10" width="200">
+						<form action="composememe.html" method='get' style="width:100%; position: relative;bottom:0;" >
+							<button name="url" value='[[index.url]]' style="width:100%; padding:10%;">Use This Meme</button>
+						</form>
+						</zg-column>
+					</zg-colgroup>
+				</zing-grid>
+				<zing-grid>
+					<zg-caption style=" text-align: left; position: fixed; top:0; width:100%; left:0;z-index:100;">
+					    <a href="profile.html">
+				    		<img src="./assets/defaultProfile.png" style="width:30px; border: white 2px solid; border-radius: 30px;"id="profileBtn"></img>
+				    	</a>
+						<span style="margin-left:2em">MemeMasterdb</span>
+						<span class="button" style="margin-left:2em" id="addBtn">
+							<a  href="./viewmemes.html" style="color:white; text-decoration: none">View My Memes</a>
+						</span>
+					</zg-caption>
+				</zing-grid>
+				<br><br>
+			</form>
+			<br>
+		</div>
+  </body>
+  <script src="./addmeme.js"></script>
+</html>

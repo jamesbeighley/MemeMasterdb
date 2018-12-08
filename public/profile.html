@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Profile</title>
+    <link rel="icon" href="./assets/pepe.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+ <style>
+	    body{font-size:x-large; text-align:center; background-color: white;}
+	    h1, h3, .form,div {text-align: center; }
+		div {
+		    background-color:  #0f7296; 
+			color: white;
+			border-radius: 15px;
+			margin: auto;
+			margin-top: 2%;
+			padding: 2%;
+			border: 1px solid black; 
+	    }
+	    input{ background-color: white;}
+		.form {
+			background-color:  #0f7296; 
+			color: white;
+			border-radius: 15px;
+			padding: 20px;
+			position: absolute;
+			width: 40%;
+			height: 40%;
+			top: 30%;
+			border: 1px solid black; 
+			}
+		#logindiv {
+			left: 2.5%;
+		}
+		#signupdiv {
+			right: 2.5%;
+		}
+	</style>
+
+	<div>
+    <h1><p>MemeMaster</p></h1>
+    <h2><a href="index.html" onclick="signOut()">Log out</a></h2>
+	<table style="width:100%">
+        <tr id="PasswordRow">
+            <td>Password:</td>
+            <td id="Password"></td>
+            <td>
+                <button id="passwordEdit" class="push" onclick="passwordChange()">Change Password</button>
+            </td>
+
+        </tr>
+        <tr id="curPassword" style="display: none">
+            <td>Current Password</td>
+            <td>
+                <input id="currentPW" type="password" placeholder="Enter Here">
+            </td>
+        </tr>
+        <tr id="newPassword" style="display: none">
+            <td>New Password</td>
+            <td>
+                <input id="newPW" type="password" placeholder="Enter Here">
+            </td>
+            <td>
+                Password must be at least 6 characters.
+            </td>
+        </tr>
+        <tr id="re-enterPW" style="display: none">
+            <td>Re-Enter New Password</td>
+            <td>
+                <input id="reenterPW" type="password" placeholder="Enter Here">
+            </td>
+            <td>
+                <button id="passwordSave" class="push" onclick="passwordSave()" type="submit" hidden="true">Submit</button>
+                <button id="passwordCancel" class="push" onclick="passwordCancel()" hidden="true">Cancel</button>
+            </td>
+        </tr>
+
+    </table>
+</div>
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAbsjbGgCq-W1dQRfBT9FvSzTy61VimauI",
+    authDomain: "mememasterdb.firebaseapp.com",
+    databaseURL: "https://mememasterdb.firebaseio.com",
+    projectId: "mememasterdb",
+    storageBucket: "mememasterdb.appspot.com",
+    messagingSenderId: "732615011763"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+    <script src="profile.js"></script>
+	<style>
+		.profile {
+			background: aliceblue;
+		}
+
+		table {
+			padding: 30px;
+			border-spacing: 50px;
+			border-collapse: separate;
+		}
+
+		input {
+			border: none;
+			background: transparent;
+		}
+
+		.container {
+			margin-left: auto;
+			margin-right: auto;
+			width: 300px;
+		}
+
+		.container img {
+			margin: 25px;
+			background: transparent;
+			display: block;
+		}
+
+		.addBtn {
+			position: relative;
+			overflow: hidden;
+			display: block;
+			float: right;
+			width: 20%;
+			height: 50px;
+		}
+
+		.addBtn input[type="file"] {
+			position: absolute;
+			left: 0;
+			top: 0;
+			opacity: 0;
+		}
+
+		.push {
+			border-radius: 5px;
+
+			background-color: #00c292;
+			color: #ffffff;
+		}
+	</style>
+	
+</body>
+
+</html>
